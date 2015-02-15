@@ -29,7 +29,7 @@ RSpec.describe FeedItem do
   let(:item) { FeedItem.new(item_xml) }
 
   it "parses the episode number" do
-    expect(item.number).to eq("281")
+    expect(item.number).to eq(281)
   end
 
   it "parses the episode title" do
@@ -43,10 +43,6 @@ RSpec.describe FeedItem do
   it "parses the video url" do
     url = "https://rubytapas.dpdcart.com/feed/download/43998/281-video.mp4"
     expect(item.video_url).to eq(url)
-  end
-
-  it "parses the video name" do
-    expect(item.video_name).to eq("281-video.mp4")
   end
 end
 

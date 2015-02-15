@@ -6,7 +6,7 @@ class FeedItem
   end
 
   def number
-    title_parts[1]
+    title_parts[1].to_i
   end
 
   def title
@@ -19,10 +19,6 @@ class FeedItem
 
   def video_url
     doc.css("enclosure").first["url"]
-  end
-
-  def video_name
-    File.basename video_url
   end
 
   private
