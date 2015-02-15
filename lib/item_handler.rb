@@ -6,6 +6,7 @@ class ItemHandler
   end
 
   def handle
+    puts feed_item.video_url
     episode = Episode.find_by_number(feed_item.number)
     unless episode.present?
       Episode.create(

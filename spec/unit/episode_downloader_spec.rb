@@ -22,9 +22,11 @@ RSpec.describe EpisodeDownloader do
   it "passes each item to an item handler" do
     allow(downloader).to receive(:fetch)
     item = double("item")
+    handler = double("ItemHandler")
     allow_any_instance_of(Feed).to receive(:items) { [item] }
 
-    expect_any_instance_of(ItemHandler).to receive(:handle)
+    expect(ItemHandler).to receive(:new).with(item) { handler }
+    expect(handler).to receive(:handle)
     downloader.download
   end
 end

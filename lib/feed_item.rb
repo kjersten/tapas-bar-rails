@@ -6,7 +6,7 @@ class FeedItem
   end
 
   def number
-    title_parts[1].to_i
+    title_parts[1]
   end
 
   def title
@@ -28,6 +28,6 @@ class FeedItem
   end
 
   def title_parts
-    full_title.match(/^(\d*) (.*)/)
+    full_title.match(/^([\db]*):?[ -](.*)/)
   end
 end

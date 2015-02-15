@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20150214181553) do
 
   create_table "episodes", force: true do |t|
-    t.integer  "number"
+    t.string   "number"
     t.string   "title"
     t.text     "description"
     t.string   "remote_video_url"
