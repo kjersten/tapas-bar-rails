@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  get 'episodes/index'
+
   get 'episode/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  root 'episode#index'
+  root 'episodes#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

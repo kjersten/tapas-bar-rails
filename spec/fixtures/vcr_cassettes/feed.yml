@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://a:a@rubytapas.dpdcart.com/feed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 15 Feb 2015 02:08:27 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - symfony=q5qnt32ntbkcvki0chgfirfko4; path=/; HttpOnly
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding,User-Agent
+      P3p:
+      - CP="NOI CURa OUR NOR UNI"
+      Connection:
+      - close
+      Content-Type:
+      - application/rss+xml; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss xmlns:itunes=\"http://www.itunes.com/dtds/podcast-1.0.dtd\"
+        version=\"2.0\">\n  <channel>\n    <title>RubyTapas</title>\n    <link>https://rubytapas.dpdcart.com/subscriber/content</link>\n
+        \   <description/>\n    <pubDate>Thu, 12 Feb 2015 09:00:00 -0500</pubDate>\n
+        \   <managingEditor>contact@shiprise.net (Avdi Grimm)</managingEditor>\n    <language>en</language>\n
+        \   <copyright>Copyright 2015 RubyTapas</copyright>\n    <generator>getdpd.com</generator>\n
+        \   <itunes:summary>RubyTapas: Small plates of gourmet code.</itunes:summary>\n
+        \   <itunes:image href=\"https://getdpd.com/uploads/ruby-tapas.png\"/>\n    <image>\n
+        \     <url>https://getdpd.com/uploads/ruby-tapas.png</url>\n      <title>Ruby
+        Tapas</title>\n      <link>https://rubytapas.dpdcart.com/subscriber/content</link>\n
+        \     <width>849</width>\n      <height>849</height>\n    </image>\n    <item>\n
+        \     <title><![CDATA[281 Splatted Send]]></title>\n      <link>https://rubytapas.dpdcart.com/subscriber/post?id=685</link>\n
+        \     <description><![CDATA[a bunch of html goes here]]></description>\n
+        \     <guid isPermaLink=\"false\">dpd-7997e0a7fac5b6df0686aa4a37bf95999ed5d1b0</guid>\n
+        \     <pubDate>Thu, 12 Feb 2015 09:00:00 -0500</pubDate>\n      <enclosure
+        url=\"https://rubytapas.dpdcart.com/feed/download/43998/281-splatted-send.mp4\"
+        length=\"54013365\" type=\"video/mp4\"/>\n      <itunes:subtitle>In this episode
+        we discover a trick that can enable us to easily pack up messages with their
+        arguments and pass them around.</itunes:subtitle>\n      <itunes:image href=\"https://getdpd.com/uploads/ruby-tapas.png\"/>\n
+        \   </item>\n
+        </channel>\n</rss>\n"
+    http_version:
+  recorded_at: Sun, 15 Feb 2015 02:08:29 GMT
+recorded_with: VCR 2.9.2
