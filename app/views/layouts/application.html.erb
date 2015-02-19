@@ -5,6 +5,10 @@
     <meta content='initial-scale=1.0' name='viewport'>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"></link>
     <link href="//cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css" rel="stylesheet"></link>
+    <%= stylesheet_link_tag "application", media: "all" %>
+  </head>
+  <body>
+    <%= yield %>
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
     <script>
@@ -16,10 +20,6 @@
       ga('create', 'UA-55890330-1', 'auto');
       ga('send', 'pageview');
     </script>
-    <%= stylesheet_link_tag "application", media: "all" %>
     <%= javascript_include_tag "application" %>
-  </head>
-  <body>
-    <%= yield %>
   </body>
 </html>

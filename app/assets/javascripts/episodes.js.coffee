@@ -1,8 +1,8 @@
 if $('html').is('.episodes')
   $(document).ready ->
-    $('#episode-list').dataTable(
+    $('#episode-list').DataTable(
       {
-        "ajax": "/list",
+        "ajax": "/episodes.json",
         "order": [0, "desc"],
         "columnDefs": [
           {
@@ -18,12 +18,6 @@ if $('html').is('.episodes')
               "targets": "ep-description",
               "data": "description",
               "width": "600px"
-           },
-           {
-              "targets": "ep-actions",
-              "data": "actions",
-              "searchable": false,
-              "orderable": false
            }
         ]
       }
