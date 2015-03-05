@@ -18,6 +18,10 @@ if $('html').is('.episodes')
               "targets": "ep-description",
               "data": "description",
               "width": "600px"
+           },
+           {
+              "targets": "ep-actions",
+              "data": "actions"
            }
         ]
       }
