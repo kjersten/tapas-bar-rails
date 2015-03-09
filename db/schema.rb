@@ -11,17 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150214181553) do
+ActiveRecord::Schema.define(version: 20150309023021) do
 
   create_table "episodes", force: true do |t|
     t.string   "number"
     t.string   "title"
     t.text     "description"
     t.string   "remote_video_url"
-    t.string   "local_video_url"
-    t.boolean  "watched",          default: false
+    t.boolean  "watched",            default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "video_file_name"
+    t.string   "video_content_type"
+    t.integer  "video_file_size"
+    t.datetime "video_updated_at"
   end
 
 end

@@ -32,6 +32,9 @@ gem 'faraday'
 # XML parsing
 gem 'nokogiri'
 
+# file attachments
+gem 'paperclip'
+
 group :development, :test do
   gem 'byebug'
 end

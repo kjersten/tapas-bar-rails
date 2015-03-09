@@ -1,13 +1,14 @@
 require "rails_helper"
 require "fetch"
+require "data_downloader"
 
 RSpec.describe Fetch do
-  let(:dummy_object) { Object.new.extend(Fetch) }
+  let(:fetching_object) { Object.new.extend(Fetch) }
 
   it "authenticates and fetchs a page from Ruby Tapas" do
     VCR.use_cassette("feed") do
-      response = dummy_object.fetch("feed")
-      expect(response).to start_with("<?xml")
+      response_file = fetching_object.fetch(DataDownloader::FEED_URL)
+      expect(response_file.read).to start_with("<?xml")
     end
   end
 end
