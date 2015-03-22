@@ -7,4 +7,13 @@ RSpec.describe EpisodesController do
       expect(response).to have_http_status(:success)
     end
   end
+
+  describe "PATCH #update" do
+    it "returns http success" do
+      episode = create(:episode)
+
+      patch :update, id: episode.id
+      expect(response).to have_http_status(:success)
+    end
+  end
 end

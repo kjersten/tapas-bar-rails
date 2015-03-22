@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root 'episodes#index'
 
-  resources :episodes, only: [:index]
+  resources :episodes, only: [:index, :update]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -41,7 +41,7 @@ end
 
 group :test do
   gem 'rspec-rails', '~> 3.0'
-  gem 'factory_girl'
+  gem 'factory_girl', '~> 4.0'
   gem 'vcr'
   gem 'webmock'
 end

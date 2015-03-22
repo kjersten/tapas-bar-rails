@@ -10,18 +10,19 @@ RSpec.describe VideoDownloader do
     )
   }
   let(:downloader) { VideoDownloader.new }
+  let(:video) { File.new("spec/fixtures/files/video.mp4") }
 
   after :each do
     episode.video.destroy
   end
 
   it "downloads the episode's video" do
-    expect(downloader).to receive(:fetch).with(episode.remote_video_url) { File.new("spec/fixtures/video.mp4") }
+    expect(downloader).to receive(:fetch).with(episode.remote_video_url) { video }
     downloader.download(episode)
   end
 
   it "associates the downloaded video with the episode" do
-    allow(downloader).to receive(:fetch) { File.new("spec/fixtures/video.mp4") }
+    allow(downloader).to receive(:fetch) { video }
 
     downloader.download(episode)
 
@@ -29,7 +30,7 @@ RSpec.describe VideoDownloader do
   end
 
   it "creates the video name based on episode metadata" do
-    allow(downloader).to receive(:fetch) { File.new("spec/fixtures/video.mp4") }
+    allow(downloader).to receive(:fetch) { video }
 
     downloader.download(episode)
 
