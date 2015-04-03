@@ -18,3 +18,11 @@
     <tbody></tbody>
   </table>
 </div>
+
+<div class="hidden">
+  <%= form_for Episode.first, { remote: true, html: { class: "episode_update_template" } } do |f| %>
+    <%= f.hidden_field(:watched, value: true) %>
+    <%= f.submit "Watch Episode", class: "btn btn-success" %>
+  <% end %>
+</div>
+

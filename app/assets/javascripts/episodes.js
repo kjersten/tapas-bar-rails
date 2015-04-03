@@ -1,5 +1,5 @@
-if $('html').is('.episodes')
-  $(document).ready ->
+if ($('html.episodes').length > 0) {
+  $(document).ready(function() {
     $('#episode-list').DataTable(
       {
         "ajax": "/episodes.json",
@@ -21,8 +21,16 @@ if $('html').is('.episodes')
            },
            {
               "targets": "ep-actions",
-              "data": "actions"
+              "data": "id",
+              "render": function (data, type, full, meta) {
+                var form = $('.episode_update_template')[0].cloneNode(true);
+                var form_link = $(form).attr("action").replace(/\d*$/, data);
+                $(form).attr("action", form_link);
+                return form.outerHTML;
+              }
            }
         ]
       }
-    )
+    );
+  });
+}

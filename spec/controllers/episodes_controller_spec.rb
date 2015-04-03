@@ -9,11 +9,15 @@ RSpec.describe EpisodesController do
   end
 
   describe "PATCH #update" do
-    it "returns http success" do
-      episode = create(:episode)
+    let(:episode) { create(:episode, :with_video) }
 
-      patch :update, id: episode.id
-      expect(response).to have_http_status(:success)
+    it "returns valid and gives the video URL" do
+      patch :update, { id: episode.id, episode: { watched: true } }
+      expect(response).to have_http_status(200)
+
+      body = JSON.parse(response.body)
+      expect(body["valid"]).to eq(true)
+      expect(body["video_url"]).to match(/\/videos\//)
     end
   end
 end
