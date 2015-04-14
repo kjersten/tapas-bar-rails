@@ -1,5 +1,6 @@
 if ($('html.episodes').length > 0) {
   $(document).ready(function() {
+
     $('#episode-list').DataTable(
       {
         "ajax": "/episodes.json",
@@ -32,5 +33,9 @@ if ($('html.episodes').length > 0) {
         ]
       }
     );
+
+    $('#episode-list').on('ajax:success', '.episode_update_template', function(event, data, status, xhr) {
+      location.href = data["video_url"];
+    });
   });
 }

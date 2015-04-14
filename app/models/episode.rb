@@ -4,6 +4,7 @@ class Episode < ActiveRecord::Base
 
   has_attached_file :video, {
       path: "public/:attachment/:hash.:extension",
+      url: ":attachment/:hash.:extension",
       hash_secret: Rails.application.secrets.video_attachment_secret
     }
 
