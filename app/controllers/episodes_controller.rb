@@ -1,4 +1,7 @@
 class EpisodesController < ApplicationController
+
+  before_action :require_login
+
   def index
     @episodes = Episode.all
   end

@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   root 'episodes#index'
 
   resources :episodes, only: [:index, :update]
+  get    "login"   => "sessions#new"
+  post   "login"   => "sessions#create"
+  delete "logout"  => "sessions#destroy"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,0 +1,28 @@
+<div class="container top-buffer">
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+      <%= image_tag "green_8x4.jpg" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 col-sm-6">
+      <h2>Velkommen</h2>
+    </div>
+  </div>
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>
+  <div class="row">
+    <%= form_for(:session, url: login_path, html: { class: "form-inline top-margin-md col-md-6 col-sm-10" }) do |f| %>
+      <div class="form-group">
+        <%= f.label :username, class: "sr-only" %>
+        <%= f.text_field :username, class: "form-control", placeholder: "Username" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :password, class: "sr-only" %>
+        <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+      </div>
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
