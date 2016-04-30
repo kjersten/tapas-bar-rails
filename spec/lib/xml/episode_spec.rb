@@ -5,27 +5,24 @@ RSpec.describe Xml::Episode do
 
   def item_xml(title)
     Nokogiri::XML(%{
-    <item>
-      <title><![CDATA[#{title}]]></title>
-      <link>https://rubytapas.dpdcart.com/subscriber/post?id=685</link>
-      <description><![CDATA[
-        <div class="blog-entry">
-            <div class="blog-content">
-            <p>a short description</p>
-            <p>A complete transcript of the episode</p>
-          </div>
-        ]]>
-      </description>
-      <guid isPermaLink="false">
-        dpd-7997e0a7fac5b6df0686aa4a37bf95999ed5d1b0
-      </guid>
-      <pubDate>Thu, 12 Feb 2015 09:00:00 -0500</pubDate>
-      <enclosure
-        url="https://rubytapas.dpdcart.com/feed/download/43998/281-video.mp4"
-        length="54013365" type="video/mp4"/>
-      <subtitle>Episode description.</itunes:subtitle>
-      <image href="https://getdpd.com/uploads/ruby-tapas.png"/>
-    </item>})
+      <item>
+        <title><![CDATA[#{title}]]></title>
+        <link>https://rubytapas.dpdcart.com/subscriber/post?id=18</link>
+        <description><![CDATA[<div class="blog-entry">
+          <div class="blog-content"><p>First paragraph in blog content div.</p><p>Second paragraph of blog content.</p></div>
+          <h3>Attached Files</h3>
+          <ul>
+            <li><a href="https://rubytapas.dpdcart.com/subscriber/download?file_id=25">RubyTapas001.mp4</a></li>
+            <li><a href="https://rubytapas.dpdcart.com/subscriber/download?file_id=26">001-binary-literals.html</a></li>
+            <li><a href="https://rubytapas.dpdcart.com/subscriber/download?file_id=27">001-binary-literals.rb</a></li>
+          </ul></div>]]>
+        </description>
+        <guid isPermaLink="false">dpd-89e8004c8242e7ad548833bef1e18a5b575c92c1</guid>
+        <pubDate>Mon, 24 Sep 2012 09:00:00 -0400</pubDate>
+        <enclosure url="https://rubytapas.dpdcart.com/feed/download/25/RubyTapas001.mp4" length="12502397" type="video/mp4"/>
+        <image href="https://getdpd.com/uploads/ruby-tapas.png"/>
+      </item>
+    })
   end
 
 
@@ -67,11 +64,11 @@ RSpec.describe Xml::Episode do
   end
 
   it "parses the episode description" do
-    expect(basic_item.description).to eq("Episode description.")
+    expect(basic_item.description).to eq("First paragraph in blog content div.")
   end
 
   it "parses the video url" do
-    url = "https://rubytapas.dpdcart.com/feed/download/43998/281-video.mp4"
+    url = "https://rubytapas.dpdcart.com/feed/download/25/RubyTapas001.mp4"
     expect(basic_item.video_url).to eq(url)
   end
 end

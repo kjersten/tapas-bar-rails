@@ -14,7 +14,7 @@ class Xml::Episode
   end
 
   def description
-    doc.css("subtitle").text
+    blog_content.css("p").first.text
   end
 
   def video_url
@@ -29,5 +29,17 @@ class Xml::Episode
 
   def title_parts
     full_title.match(/^([\db]*):?[ -](.*)/)
+  end
+
+  def full_description
+    doc.css("description").text
+  end
+
+  def parsed_description
+    Nokogiri::XML(full_description)
+  end
+
+  def blog_content
+    parsed_description.css(".blog-content")
   end
 end
