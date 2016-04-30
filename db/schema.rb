@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150309023021) do
+ActiveRecord::Schema.define(version: 20160430180859) do
 
   create_table "episodes", force: true do |t|
     t.string   "number"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150309023021) do
     t.string   "video_content_type"
     t.integer  "video_file_size"
     t.datetime "video_updated_at"
+    t.text     "transcription"
   end
 
 end

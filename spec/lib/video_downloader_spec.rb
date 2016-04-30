@@ -6,6 +6,7 @@ RSpec.describe VideoDownloader do
   let(:episode) { Episode.new(
       remote_video_url: "https://test.com/sample_video",
       number: "1",
+      description: "whatever",
       title: "generic title"
     )
   }

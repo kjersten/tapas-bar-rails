@@ -6,6 +6,7 @@ module EpisodeHandler
           number: feed_item.number,
           title: feed_item.title,
           description: feed_item.description,
+          transcription: feed_item.transcription,
           remote_video_url: feed_item.video_url
         )
       VideoDownloader.new.download(episode)

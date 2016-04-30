@@ -67,6 +67,10 @@ RSpec.describe Xml::Episode do
     expect(basic_item.description).to eq("First paragraph in blog content div.")
   end
 
+  it "parses the episode transcription" do
+    expect(basic_item.transcription).to eq("<p>First paragraph in blog content div.</p>\n<p>Second paragraph of blog content.</p>")
+  end
+
   it "parses the video url" do
     url = "https://rubytapas.dpdcart.com/feed/download/25/RubyTapas001.mp4"
     expect(basic_item.video_url).to eq(url)

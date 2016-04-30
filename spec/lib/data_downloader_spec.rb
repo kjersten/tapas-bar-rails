@@ -7,6 +7,7 @@ require "data_downloader"
 
 RSpec.describe DataDownloader do
   it "creates an episode record for each item in the feed" do
+    allow_any_instance_of(VideoDownloader).to receive(:download)
     downloader = DataDownloader.new
 
     VCR.use_cassette("feed") do

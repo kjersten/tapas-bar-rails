@@ -17,6 +17,10 @@ class Xml::Episode
     blog_content.css("p").first.text
   end
 
+  def transcription
+    blog_content.inner_html
+  end
+
   def video_url
     doc.css("enclosure").first["url"]
   end
@@ -40,6 +44,6 @@ class Xml::Episode
   end
 
   def blog_content
-    parsed_description.css(".blog-content")
+    parsed_description.css(".blog-content").first
   end
 end

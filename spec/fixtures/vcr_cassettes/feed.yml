@@ -51,7 +51,7 @@ http_interactions:
         Tapas</title>\n      <link>https://rubytapas.dpdcart.com/subscriber/content</link>\n
         \     <width>849</width>\n      <height>849</height>\n    </image>\n    <item>\n
         \     <title><![CDATA[281 Splatted Send]]></title>\n      <link>https://rubytapas.dpdcart.com/subscriber/post?id=685</link>\n
-        \     <description><![CDATA[a bunch of html goes here]]></description>\n
+        \     <description><![CDATA[<div class=\"blog-content\"><p>First paragraph in blog content div.</p><p>Second paragraph of blog content.</p></div>]]></description>\n
         \     <guid isPermaLink=\"false\">dpd-7997e0a7fac5b6df0686aa4a37bf95999ed5d1b0</guid>\n
         \     <pubDate>Thu, 12 Feb 2015 09:00:00 -0500</pubDate>\n      <enclosure
         url=\"https://rubytapas.dpdcart.com/feed/download/43998/281-splatted-send.mp4\"

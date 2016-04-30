@@ -7,6 +7,7 @@ RSpec.describe EpisodeHandler do
                 number: item_num,
                 title: "a title",
                 description: "a description",
+                transcription: "some text",
                 video_url: "a url")
               }
 
