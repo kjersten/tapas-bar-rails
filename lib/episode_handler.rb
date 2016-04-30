@@ -2,7 +2,7 @@ module EpisodeHandler
   def EpisodeHandler.save(feed_item)
     episode = Episode.find_by_number(feed_item.number)
     unless episode.present?
-      episode = Episode.create(
+      episode = Episode.create!(
           number: feed_item.number,
           title: feed_item.title,
           description: feed_item.description,

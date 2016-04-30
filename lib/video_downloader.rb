@@ -4,7 +4,7 @@ class VideoDownloader
   def download(episode)
     video_file = fetch(episode.remote_video_url)
 
-    episode.update(
+    episode.update!(
       video: video_file,
       video_file_name: "#{episode.number} - #{episode.title}.mp4"
     )
