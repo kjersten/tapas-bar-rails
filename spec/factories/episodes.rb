@@ -5,6 +5,7 @@ FactoryGirl.define do
     sequence(:number)
     title  "Sample RubyTapas Video"
     description "This video explains something."
+    transcription "A real transcription would be much longer than this."
     remote_video_url "https://example.com/video"
 
     trait :with_video do

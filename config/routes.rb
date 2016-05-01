@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root 'episodes#index'
 
-  resources :episodes, only: [:index, :update]
+  resources :episodes, only: [:index, :update, :show]
   get    "login"   => "sessions#new"
   post   "login"   => "sessions#create"
   delete "logout"  => "sessions#destroy"

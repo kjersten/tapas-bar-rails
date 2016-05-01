@@ -9,6 +9,19 @@ RSpec.describe EpisodesController do
     end
   end
 
+  describe "GET #show" do
+    let(:episode) { create(:episode, :with_video) }
+
+    it "returns http success" do
+      allow_any_instance_of(ApplicationController).to receive(:logged_in?).and_return(true)
+      get :show, id: episode.id, format: :json
+      expect(response).to have_http_status(:success)
+
+      body = JSON.parse(response.body)
+      expect(body["transcription"]).to be_truthy
+    end
+  end
+
   describe "PATCH #update" do
     let(:episode) { create(:episode, :with_video) }
 

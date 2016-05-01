@@ -12,6 +12,11 @@ class EpisodesController < ApplicationController
     render json: { valid: valid, video_url: episode.video.url }
   end
 
+  def show
+    episode = Episode.find(params[:id])
+    render json: episode
+  end
+
   private
 
   def episode_params
