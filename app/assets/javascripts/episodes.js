@@ -50,6 +50,9 @@ if ($('html.episodes').length > 0) {
     $('#episode-list').on('ajax:success', '.read-transcript', function(event, data, status, xhr) {
       $('#modal-title-display').text(data['number'] + ' - ' + data['title']);
       $('#modal-transcript-display').html(data['transcription']);
+      $('pre').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
       $('#episode-modal').modal();
     });
   });
